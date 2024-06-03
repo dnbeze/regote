@@ -23,7 +23,22 @@ const Company = () => {
     return(
         <div>
             <h2>Company: {company.name}</h2>
-            <hr />
+            <hr/>
+            <p>{company.dateAdded}</p>
+            <div>
+                <h3>Notes:</h3>
+                {company.notes && company.notes.length > 0 ? (
+                    company.notes.map(note => (
+                        <div key={note.noteid}>
+                            <h4>{note.title}</h4>
+                            <p>{note.body}</p>
+                            <hr/>
+                        </div>
+                    ))
+                ) : (
+                    <p>No notes available</p>
+                )}
+            </div>
         </div>
     );
 }
