@@ -13,11 +13,11 @@ const Companies = () => {
                 dateAdded: "2024-01-01",
                 primaryPOC: "bob bob",
                 notes: [{
-                    id: 2,
+                    noteid: 6,
                     title: "big ole title",
                     body: "the data goes here",
                 },{
-                    id: 3,
+                    noteid: 3,
                     title: "small title",
                     body: "moar data",
                 }],
@@ -28,11 +28,11 @@ const Companies = () => {
                 dateAdded: "1903-05-05",
                 primaryPOC: "Billy John",
                 notes: [{
-                    id: 2,
+                    noteid: 4,
                     title: "big ole title",
                     body: "the data goes here",
                 },{
-                    id: 3,
+                    noteid: 5,
                     title: "small title",
                     body: "moar data",
                 }],
