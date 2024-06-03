@@ -12,14 +12,30 @@ const Companies = () => {
                 name: "Acme Corp",
                 dateAdded: "2024-01-01",
                 primaryPOC: "bob bob",
-                data: "when i learn how to handle a bunch of data it will go here",
+                notes: [{
+                    id: 2,
+                    title: "big ole title",
+                    body: "the data goes here",
+                },{
+                    id: 3,
+                    title: "small title",
+                    body: "moar data",
+                }],
             },
             {
                 id: 2,
                 name: "Billy Corp",
                 dateAdded: "1903-05-05",
                 primaryPOC: "Billy John",
-                data: "when i learn how to handle a bunch of data it will go here",
+                notes: [{
+                    id: 2,
+                    title: "big ole title",
+                    body: "the data goes here",
+                },{
+                    id: 3,
+                    title: "small title",
+                    body: "moar data",
+                }],
             },
         ];
         setCompanies(companiesList)
@@ -30,7 +46,7 @@ const Companies = () => {
                 <h2>Companies!</h2>
                 <hr />
 
-                <table className="table-container">
+                <table className="table is-striped is-fullwidth">
                     <thead>
                     <tr>
                         <th>Name</th>
