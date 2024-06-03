@@ -7,11 +7,22 @@ const Company = () => {
     let { id } = useParams();
 
     useEffect(() => {
+        let myCompany = {
+            id: 1,
+            name: "Acme Corp",
+            dateAdded: "2024-01-01",
+            primaryPOC: "bob bob",
+            notes: [{
+                noteid: 6,
+                title: "big ole title",
+                body: "the data goes here",
+            },],}
+            setCompany(myCompany)
+    }, [id])
 
-    }, [id]);
     return(
         <div>
-            <h2>Company!</h2>
+            <h2>Company: {company.name}</h2>
             <hr />
         </div>
     );
