@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
 )
 
 const port = ":8080"
@@ -16,6 +15,7 @@ func main() {
 	//TODO set app config
 	var app application
 	//TODO set env vars
+
 	//TODO read from command line
 	//TODO connect to database
 
@@ -23,10 +23,8 @@ func main() {
 	//TODO start a web server
 
 	e := echo.New()
-	e.Use(middleware.Logger())
-	e.Use(middleware.Recover())
-
-	e.GET("/", hello)
+	initializeMiddleware(e)
+	initializeRoutes(e, &app)
 
 	e.Logger.Fatal(e.Start(port))
 
