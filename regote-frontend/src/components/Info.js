@@ -1,11 +1,11 @@
 
-const API = () => {
+const Info = () => {
     return(
         <div>
-            <h2>API!</h2>
+            <h2>Info!</h2>
             <hr />
         </div>
     );
 }
 
-export default API;
+export default Info;
