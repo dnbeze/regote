@@ -6,4 +6,5 @@ import (
 
 func initializeRoutes(e *echo.Echo, app *application) {
 	e.GET("/", app.Home)
+	e.GET("/companies", app.AllCompanies)
 }
