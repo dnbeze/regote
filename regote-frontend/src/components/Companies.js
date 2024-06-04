@@ -6,39 +6,23 @@ const Companies = () => {
     const [companies, setCompanies] = useState([]);
 
     useEffect(() => {
-        let companiesList = [
-            {
-                id: 1,
-                name: "Acme Corp",
-                dateAdded: "2024-01-01",
-                primaryPOC: "bob bob",
-                notes: [{
-                    noteid: 6,
-                    title: "big ole title",
-                    body: "the data goes here",
-                },{
-                    noteid: 3,
-                    title: "small title",
-                    body: "moar data",
-                }],
-            },
-            {
-                id: 2,
-                name: "Billy Corp",
-                dateAdded: "1903-05-05",
-                primaryPOC: "Billy John",
-                notes: [{
-                    noteid: 4,
-                    title: "big ole title",
-                    body: "the data goes here",
-                },{
-                    noteid: 5,
-                    title: "small title",
-                    body: "moar data",
-                }],
-            },
-        ];
-        setCompanies(companiesList)
+        const headers = new Headers();
+        headers.append("Content-Type", "application/json");
+
+        const requestOptions = {
+            method: "GET",
+            headers: headers,
+
+        }
+
+        fetch(`http://localhost:8080/companies`, requestOptions)
+            .then((response) => response.json())
+            .then((data) => {
+                setCompanies(data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }, []);
 
     return(
